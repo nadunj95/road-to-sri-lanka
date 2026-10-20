@@ -143,10 +143,6 @@ function vToday() {
       (r.auto != null ? '<span class="check' + (r.done ? ' on' : '') + '" aria-label="' + (r.done ? 'Done' : 'Not yet') + '">' + (r.done ? ic('check') : '') + '</span>' : checkBtn(r.done, 'tick', r.key, r.t)) + '</div>';
   });
   h += '</div>';
-  if (dowOf(date) < 5 && P.week >= 0) {
-    const n = d.desk || 0;
-    h += '<div class="card row" style="margin-top:10px"><span style="width:32px;height:32px;border-radius:8px;background:var(--train);color:#fff;display:grid;place-items:center;flex:none">' + ic('desk').replace('<svg', '<svg width="19" height="19"') + '</span><button class="grow" style="text-align:left" data-a="routine" data-v="desk"><div style="font-weight:600">Desk resets</div><div class="small muted">If you sit for work, every 60 min: stand, 5 cat-camels, a few glute squeezes</div></button><div class="row" style="gap:6px"><button class="icon-btn" style="width:36px;height:36px" data-a="desk" data-v="-1" aria-label="One fewer">' + ic('minus') + '</button><span class="h-md tnum" style="min-width:22px;text-align:center">' + n + '</span><button class="icon-btn" style="width:36px;height:36px" data-a="desk" data-v="1" aria-label="One more">' + ic('plus') + '</button></div></div>';
-  }
   h += '</section>';
 
   // fuel snapshot
@@ -238,7 +234,7 @@ function vTrain() {
   h += '</div></section>';
 
   h += '<section class="section"><div class="sec-h pad"><h2 class="h-md">Daily routines</h2></div><div class="rail pad">' +
-    [['kneeArmor', 'Knee Armor', '~10 min · daily to Wk 6, then M/W/F'], ['backReset', 'Back Reset', '~5 min · daily until back clear'], ['deepcore', 'Deep Core', '4 min · every morning'], ['ramp_upper', 'Ramp · Pull and Push', '6–8 min · Mon and Thu'], ['ramp_lower', 'Ramp · lower days', '6–8 min · Tue and Sat'], ['mobility', 'Easy mobility', '10 min · Wednesdays'], ['desk', 'Desk reset', '1 min · every 60 min']]
+    [['kneeArmor', 'Knee Armor', '~10 min · daily to Wk 6, then M/W/F'], ['backReset', 'Back Reset', '~5 min · daily until back clear'], ['deepcore', 'Deep Core', '4 min · every morning'], ['ramp_upper', 'Ramp · Pull and Push', '6–8 min · Mon and Thu'], ['ramp_lower', 'Ramp · lower days', '6–8 min · Tue and Sat'], ['mobility', 'Easy mobility', '10 min · Wednesdays']]
       .map(([id, n, sub]) => routineTile(id, n, sub)).join('') + '</div></section>';
 
   const cp = coreSet(w), f = coreFmt(w);

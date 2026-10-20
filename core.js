@@ -692,7 +692,7 @@ function targets(date) {
   if (date >= '2027-01-12' && date <= '2027-01-14') { kcal += K.taperAdd; carbs = [carbs[0] + 75, carbs[1] + 100]; label = 'Taper · +75–100 g carbs'; }
   kcal += S.settings.kcalAdj || 0;
   if (S.settings.energyLow && kcal < K.energyFloor) { kcal = K.energyFloor; label = 'Energy check · about 2,200'; }
-  return { kcal, label, p: D.PROTEIN.slice(), fat: wkEnd ? [65, 80] : [55, 65], carbs, fiber: [25, 35], water: 3 };
+  return { kcal, label, p: D.PROTEIN.slice(), fat: [60, 60], carbs, fiber: [25, 35], water: 3 };
 }
 function foodById(id) { return D.FOODS.find((f) => f.id === id); }
 function mealsFor(date) { return peek(date).meals || []; }

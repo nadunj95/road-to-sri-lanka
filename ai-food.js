@@ -558,7 +558,7 @@ function aiHeroHTML(date) {
     }).join('') + '</div><p class="xs muted" style="margin:8px 2px 0">' + (n.n ? 'From AI-logged meals (' + n.n + ' of ' + n.all + ' meals). Other meals count as unknown.' : 'From AI-logged meals. Nothing logged with AI yet, so these read 0.') + '</p>';
   } else {
   const tg = r.tg, tt = r.tt;
-  const M = [['Protein', 'P', tt.p, tg.p[0], 'var(--fuel)', tg.p[0] + '–' + tg.p[1] + ' g'], ['Carbs', 'C', tt.c, tg.carbs ? tg.carbs[1] : 300, 'var(--train)', tg.carbs ? tg.carbs[0] + '–' + tg.carbs[1] + ' g' : 'the rest'], ['Fat', 'F', tt.f, tg.fat[1], 'var(--mind)', tg.fat[0] + '–' + tg.fat[1] + ' g']];
+  const M = [['Protein', 'P', tt.p, tg.p[0], 'var(--fuel)', tg.p[0] + '–' + tg.p[1] + ' g'], ['Carbs', 'C', tt.c, tg.carbs ? tg.carbs[1] : 300, 'var(--train)', tg.carbs ? tg.carbs[0] + '–' + tg.carbs[1] + ' g' : 'the rest'], ['Fat', 'F', tt.f, tg.fat[1], 'var(--mind)', (tg.fat[0] === tg.fat[1] ? tg.fat[1] : tg.fat[0] + '–' + tg.fat[1]) + ' g']];
   h += '<div class="aimacs">' + M.map((m) => {
     const left = m[3] - m[2];
     return '<div class="card" role="group" aria-label="' + m[0] + ': ' + fmtN(Math.abs(left)) + ' grams ' + (left >= 0 ? 'left' : 'over') + '"><div class="aimac-n tnum" style="' + (left < 0 ? 'color:var(--bad)' : '') + '">' + fmtN(Math.abs(left)) + '<span class="xs muted" style="font-weight:600"> g</span></div><div class="xs muted" style="margin:2px 0 8px">' + m[0] + (left >= 0 ? ' left' : ' over') + '</div>' +
