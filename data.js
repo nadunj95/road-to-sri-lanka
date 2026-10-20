@@ -713,7 +713,7 @@
   /* drinks: cap 2–3 a night, Friday 1–2, none on Thursday night before Polo Day. No weekly budget in the plan. */
   const DRINK_BUDGET = { night: 3, fri: 2, thu: 0 };
   const FREE_MEALS = { normal: 2 };
-  const PROTEIN = [125, 145];
+  const PROTEIN = [140, 145];
   const KCAL = { weekday: 1900, weekend: 2150, bigDay: 2250, energyFloor: 2200, taperAdd: 300 };
   const SUPPS = [
     { id: 'creatine', n: 'Creatine 3–5 g', d: 'Every day, rest days included (the first-week scale bump is water in the muscle)' },
